@@ -22,3 +22,10 @@ for (i, j) in enumerate(response.json()["tracks"]):
     uris.append(j["uri"])
     print(f"{i + 1}) \"{j['name']}\" by {j['artists'][0]['name']}")
 
+print()
+
+# Report available genres.
+response_genres = requests.get("https://api.spotify.com/v1/recommendations/available-genre-seeds",
+                               headers={"Content-Type": "application/json",
+                                        "Authorization": f"Bearer {token}"})
+print(response_genres.json())
