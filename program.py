@@ -3,7 +3,7 @@ import json
 
 ########################################################################################################################
 #   Create a private.py file, which contains a string variable named "token", containing an OAuth Token:               #
-#   playlist-modify-private for your Spotify account.                                                                  #
+#   playlist-modify-private for your Spotify account. You will also need to include a user_id for Spotify.             #
 ########################################################################################################################
 
 from private import token, user_id
