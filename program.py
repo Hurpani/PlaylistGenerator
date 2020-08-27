@@ -23,10 +23,15 @@ print(response_genres.json())
 
 # Filters for Spotify.
 limit: int = 30
-seed_genres: str = "ambient"#"electronic,edm"
+seed_genres: str = "pop"#"ambient"#"electronic,edm"
+seed_artists: str = "16yUpGkBRgc2eDMd3bB3Uw"
+valence: float = 0.9;
+target_popularity: int = 10000000
+#target_speechiness: int = 0;
+#seed_songs: str = ""
 market: str = "AU"
 
-query: str = f"{endpoint}?limit={limit}&seed_genres={seed_genres}&market={market}"
+query: str = f"{endpoint}?limit={limit}&seed_genres={seed_genres}&market={market}&seed_artists={seed_artists}&valence={valence}&target_popularity={target_popularity}"
 response = requests.get(query, headers={"Content-Type": "application/json", "Authorization": f"Bearer {token}"})
 
 uris: [] = []
